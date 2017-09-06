@@ -137,14 +137,14 @@ module top_flyinglogo(clk, rst, hsync, vsync, vga_r, vga_g, vga_b,up,down,left,r
 				begin
 					// logo_x <= 10'b0100000100;//260
 					// logo_y <= 10'b0000000000;//0
-					logo_y <= logo_y + 10'b0000000001;
+					logo_y <= logo_y - 10'b0000000001;
 				end
 				
 				if(down==1'b1)
 				begin
 					// logo_x <= 10'b0100000100;//260
 					// logo_y <= 10'b0101000000;//320
-					logo_y <= logo_y - 10'b0000000001;
+					logo_y <= logo_y + 10'b0000000001;
 				end
 				
 				if(left==1'b1)
