@@ -1,3 +1,4 @@
+`timescale 1ns/1ns  
 module mips (clk,rst);
     input       clk;
     input       rst;
@@ -41,6 +42,8 @@ module mips (clk,rst);
       wire [2:0] mux4_32sel,mux4_5sel;
       wire mux2sel;
      
+	 wire IRWre;
+	 wire PCWE;//写使能信号
     assign instrout = instr;  
     assign op = instr[31:26];
     assign RS = instr[25:21];
@@ -63,7 +66,7 @@ module mips (clk,rst);
     
     
     //module PC (rst,clk,nPC,PC);
-    PC U_PC (rst,clk,PCin,PCout);
+    PC U_PC (PCWE,rst,clk,PCin,PCout);
     
     //module RegFile( CLK_I, RS1_I, RS2_I, RD_I, RegWr_I,WData_I,RS1_O, RS2_O);
     RegFile U_RF (clk,RS,RT,mux4_5out,RegWrt,MemToRegLateout,RS1out,RS2out);
@@ -82,7 +85,7 @@ module mips (clk,rst);
     
     
     //module ctrl (clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,RegWrt,ExtOp,mux4_5sel,mux4_32sel,mux2sel);
-    ctrl U_CTRL(clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,RegWrt,ExtOp,mux4_5sel,mux4_32sel,mux2sel);
+    ctrl U_CTRL(PCWE,clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,RegWrt,ExtOp,mux4_5sel,mux4_32sel,mux2sel);
     
     //多周期部分：
     DataLate U_ALULateOut(ALUout, clk, ALULateOut);

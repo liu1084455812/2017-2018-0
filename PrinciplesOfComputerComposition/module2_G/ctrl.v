@@ -1,4 +1,4 @@
-module ctrl (IRWre,PCWE,clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,RegWrt,ExtOp,mux4_5sel,mux4_32sel,mux2sel);//ALUctr[1:0]
+module ctrl (PCWE,clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,RegWrt,ExtOp,mux4_5sel,mux4_32sel,mux2sel);//ALUctr[1:0]
    input      	 clk,rst;
    input        beqout;//made by alu
    input        bgezout;
@@ -11,19 +11,20 @@ module ctrl (IRWre,PCWE,clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,R
    output       RegWrt;
    output [1:0] ExtOp;
    output 	PCWE;
-   output IRWre;
+
    
    output [1:0] mux4_5sel;
    output [2:0] mux4_32sel;
    output mux2sel;
    
    
-   reg 	PCWE,RegWrt,DMWrite,mux2sel,IRWre;
-   reg [1:0] mux4_5sel,mux4_32sel,ExtOp,npc_sel;
-   reg [4:0] ALUctr,state, next_state;
+   reg 	PCWE,RegWrt,DMWrite,mux2sel;
+   reg [1:0] mux4_5sel,ExtOp;
+   reg [4:0] ALUctr;
+   reg [2:0] mux4_32sel,npc_sel,state,next_state,state_out;
    
-   wire Rtype,add,sub,addiu,lw,sw,xor,j,beq,AND,jr,OR,bgez,ori,jal,bgtz,slt;//Rtype,addu,subu,ori,lw,sw,beq,lui,addi,addiu,slt,j,jal,jr,lb,lbu,lh,lhu,sb,sh,slti;   //former
-   //wire add,sub,sll,srl,sra,sllv,srlv,srav,AND,OR,XOR,NOR,andi,xori,sltiu,bne,blez,bgtz,bltz,bgez,jalr;//added
+   wire Rtype,add,sub,addiu,lw,sw,XOR,j,beq,AND,jr,OR,bgez,ori,jal,bgtz,slt;//Rtype,addu,subu,ori,lw,sw,beq,lui,addi,addiu,slt,j,jal,jr,lb,lbu,lh,lhu,sb,sh,slti;   //former
+   //wire add,sub,sll,srl,sra,sllv,srlv,srav,AND,OR,XOR,NOR,andi,XORi,sltiu,bne,blez,bgtz,bltz,bgez,jalr;//added
    //???
    assign Rtype = (op==6'b000000)?1:0;//!
    assign add   = (Rtype&&funct==6'b100000)?1:0;   	//&& ???it's better to be included in "head.v"
@@ -43,7 +44,7 @@ module ctrl (IRWre,PCWE,clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,R
    assign jr    = (Rtype&&funct==6'b001000)?1:0;
    assign slt   = (Rtype&&funct==6'b101010)?1:0;
    assign addi  = (op==6'b001000)?1:0;
-   assign xor   = (Rtype&&funct==6'b100110)?1:0;
+   assign XOR   = (Rtype&&funct==6'b100110)?1:0;
    
    //多周期定状态
    parameter [2:0] sif = 3'b000,   // IF state
@@ -61,7 +62,7 @@ module ctrl (IRWre,PCWE,clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,R
 	end
 	
 	always @(posedge clk) begin//每个时钟周期状态转换一次
-	     if (Reset == 0) begin
+	     if (rst == 1) begin
 		      state <= sif;
 		  end else begin
 		      state <= next_state;
@@ -97,38 +98,34 @@ module ctrl (IRWre,PCWE,clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,R
 	if (state == sif) PCWE = 1;
     else PCWE = 0;
    
-	//IF确定IR写使能
-	if (state == sif) IRWre = 1;
-    else IRWre = 0;
-   
     //WB确定DM写使能
-	if(state == wb2) DMWrite = (sw)?'b1:'b0;;
+	if(state == wb2) DMWrite = (sw)?'b1:'b0;
 	else DMWrite =0;
 	
 	//WB确定REG写使能
-	if(state == wb1 || state == wb2) RegWrt =(add||sub||addiu||lw||lui||OR||ori||xor||AND||slt||addi||jal)?'b1:'b0;
-	else RegWrt 0;
+	if(state == wb1 || state == wb2) RegWrt =(add||sub||addiu||lw||lui||OR||ori||XOR||AND||slt||addi||jal)?'b1:'b0;
+	else RegWrt=0;
 	
 	//EXE确定运算使能
-	if(state == exe1 || state == exe2 || state ==exe3 )ALUctr = (add||addiu||addi||lw||sw)?5'b00001:(beq||sub)?5'b00010:(OR||ori)?5'b00011:(bgez||bgtz)?5'b00100:(AND)?5'b00101:(slt)?5'b00110:(xor)?5'b00111:5'b00000;
+	if(state == exe1 || state == exe2 || state ==exe3 )ALUctr = (add||addiu||addi||lw||sw)?5'b00001:(beq||sub)?5'b00010:(OR||ori)?5'b00011:(bgez||bgtz)?5'b00100:(AND)?5'b00101:(slt)?5'b00110:(XOR)?5'b00111:5'b00000;
 	else ALUctr=5'b00000;
 	
-	npc_sel= (j||jal)?3'b001:((beq&&beqout)||(bgez&&bgezout)||(bgtz&&bgezout&&!beqout))?3'b011:(jr)?3'b100:3'b000; //singular  valuebeq?11//COMPLETE
-	ExtOp =(lui)?2'b00:(lw||sw)?2'b10:(ori)?2'b01:2'b10;//EXT//OR DONT USE EXTOP//COMPLETE
-	mux4_5sel =  (addiu||addi||lui||lw||ori)?2'b00:(jal)?2'b11:2'b01;//add-regdstSel//OR SAVE DATE AT RD//COMPLETE
-	mux2sel  = (lw||sw||addiu||addi||ori)?'b1:'b0;//beq-ALUSRC//complete
-	mux4_32sel = (lui)?3'b011:(add||sub||addiu||addi||OR||ori||AND||xor||slt)?3'b000:(lw)?3'b001:(jal)?3'b100:3'b010;//??????pc+4????JAL-MEMTOREG//complete
+	npc_sel<= (j||jal)?3'b001:((beq&&beqout)||(bgez&&bgezout)||(bgtz&&bgezout&&!beqout))?3'b011:(jr)?3'b100:3'b000; //singular  valuebeq?11//COMPLETE
+	ExtOp <=(lui)?2'b00:(lw||sw)?2'b10:(ori)?2'b01:2'b10;//EXT//OR DONT USE EXTOP//COMPLETE
+	mux4_5sel <=  (addiu||addi||lui||lw||ori)?2'b00:(jal)?2'b11:2'b01;//add-regdstSel//OR SAVE DATE AT RD//COMPLETE
+	mux2sel  <= (lw||sw||addiu||addi||ori)?'b1:'b0;//beq-ALUSRC//complete
+	mux4_32sel <= (lui)?3'b011:(add||sub||addiu||addi||OR||ori||AND||XOR||slt)?3'b000:(lw)?3'b001:(jal)?3'b100:3'b010;//??????pc+4????JAL-MEMTOREG//complete
    
    end
             //(add||addiu||lw||sw)?3'b001:(beq)?3'b010:3'b000;
    // assign DMWrite = (sw)?'b1:'b0;//COMPLETE
    // assign npc_sel= (j||jal)?3'b001:((beq&&beqout)||(bgez&&bgezout)||(bgtz&&bgezout&&!beqout))?3'b011:(jr)?3'b100:3'b000;  //singular  valuebeq?11//COMPLETE
-   // assign RegWrt =(add||sub||addiu||lw||lui||OR||ori||xor||AND||slt||addi||jal)?'b1:'b0;//JAL???????????????//COMPLETE
+   // assign RegWrt =(add||sub||addiu||lw||lui||OR||ori||XOR||AND||slt||addi||jal)?'b1:'b0;//JAL???????????????//COMPLETE
    // assign ExtOp =(lui)?2'b00:(lw||sw)?2'b10:(ori)?2'b01:2'b10;//EXT//OR DONT USE EXTOP//COMPLETE
    // assign mux4_5sel =  (addiu||addi||lui||lw||ori)?2'b00:(jal)?2'b11:2'b01;//add-regdst//OR SAVE DATE AT RD//COMPLETE
    // assign mux2sel  = (lw||sw||addiu||addi||ori)?'b1:'b0;//beq-ALUSRC//complete
-   // assign mux4_32sel = (lui)?3'b011:(add||sub||addiu||addi||OR||ori||AND||xor||slt)?3'b000:(lw)?3'b001:(jal)?3'b100:3'b010;//??????pc+4????JAL-MEMTOREG//complete
+   // assign mux4_32sel = (lui)?3'b011:(add||sub||addiu||addi||OR||ori||AND||XOR||slt)?3'b000:(lw)?3'b001:(jal)?3'b100:3'b010;//??????pc+4????JAL-MEMTOREG//complete
    
-   // assign ALUctr = (add||addiu||addi||lw||sw)?5'b00001:(beq||sub)?5'b00010:(OR||ori)?5'b00011:(bgez||bgtz)?5'b00100:(AND)?5'b00101:(slt)?5'b00110:(xor)?5'b00111:5'b00000;//ALUCLASS//using sub to complete beq
+   // assign ALUctr = (add||addiu||addi||lw||sw)?5'b00001:(beq||sub)?5'b00010:(OR||ori)?5'b00011:(bgez||bgtz)?5'b00100:(AND)?5'b00101:(slt)?5'b00110:(XOR)?5'b00111:5'b00000;//ALUCLASS//using sub to complete beq
    
 endmodule  
