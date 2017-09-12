@@ -1,0 +1,263 @@
+m255
+K3
+13
+cModel Technology
+Z0 d\\Mac\Home\Desktop\module1
+T_opt
+Z1 Vm?U3k0k=GRUKHgJX>nUWo1
+Z2 04 9 4 work testbench fast 0
+Z3 =1-001c42a20752-59b7d79d-135-f90
+Z4 o-quiet -auto_acc_if_foreign -work presim
+Z5 n@_opt
+Z6 OE;O;10.1a;51
+Z7 d\\Mac\Home\Desktop\module1
+T_opt1
+Z8 V6TQAIezK2B9Xo5IPlUS]n2
+R2
+Z9 =1-001c42a20752-59b7d951-290-eb4
+Z10 o-quiet -auto_acc_if_foreign -work presim +acc
+Z11 n@_opt1
+R6
+R7
+vALu
+Z12 IYXjf[Zej]F^noRC4I65P]3
+Z13 V;DM:9MRg_DQ`Ra;Lik4]21
+R7
+Z14 w1505219635
+Z15 8//Mac/Home/Desktop/module1/alu.v
+Z16 F//Mac/Home/Desktop/module1/alu.v
+L0 4
+Z17 OE;L;10.1a;51
+r1
+31
+Z18 o-work presim -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z19 n@a@lu
+Z20 !s100 zF^Qh8WdoR1_>Dml1GW:l3
+Z21 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/alu.v|
+Z22 !s108 1505220469.763000
+Z23 !s107 instruction_head.v|//Mac/Home/Desktop/module1/alu.v|
+!i10b 1
+!s85 0
+vctrl
+!i10b 1
+!s100 ThWY4b>ZMHOOj5Uh8kXaI0
+IMXCTUH^NMWH?SU:o0lP1V0
+VF83m?69XX=>e_>KC?4X4c1
+R7
+w1505220921
+8//Mac/Home/Desktop/module1/ctrl.v
+F//Mac/Home/Desktop/module1/ctrl.v
+L0 1
+R17
+r1
+!s85 0
+31
+!s108 1505220998.556000
+!s107 //Mac/Home/Desktop/module1/ctrl.v|
+!s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/ctrl.v|
+R18
+vdm_4k
+Z24 IUg<j73NQai4`hJ@nCmXVR0
+Z25 VTM^iDM:VR]8VR`lN9O5[H2
+R7
+Z26 w1389424160
+Z27 8//Mac/Home/Desktop/module1/dm.v
+Z28 F//Mac/Home/Desktop/module1/dm.v
+L0 6
+R17
+r1
+31
+R18
+Z29 !s100 o1K;R7Ng7BO@gA0Mo>:g52
+Z30 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/dm.v|
+Z31 !s108 1505220495.082000
+Z32 !s107 //Mac/Home/Desktop/module1/dm.v|
+!i10b 1
+!s85 0
+vim_4k
+Z33 I0@I@@NdKh7<AO9z_P?mUc1
+Z34 V7NIR5eTHWjMZ=;2IILG`M3
+R7
+Z35 w1389183986
+Z36 8//Mac/Home/Desktop/module1/im.v
+Z37 F//Mac/Home/Desktop/module1/im.v
+L0 1
+R17
+r1
+31
+R18
+Z38 !s100 Q5bT?Pn74jaoe?CYSd2B;3
+Z39 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/im.v|
+Z40 !s108 1505220496.033000
+Z41 !s107 //Mac/Home/Desktop/module1/im.v|
+!i10b 1
+!s85 0
+vmips
+Z42 I@H0;7hzT]WlB:56Eo71AS3
+Z43 V^lO[ZOI0I1e8M8GJjI9B:3
+R7
+Z44 w1505220319
+Z45 8//Mac/Home/Desktop/module1/mips.v
+Z46 F//Mac/Home/Desktop/module1/mips.v
+L0 1
+R17
+r1
+31
+R18
+Z47 !s100 F4A<YlGYQ0b1DUjAgg:Qi1
+Z48 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/mips.v|
+Z49 !s108 1505220497.624000
+Z50 !s107 //Mac/Home/Desktop/module1/mips.v|
+!i10b 1
+!s85 0
+vMux_2
+Z51 I9ioEeEHW;9]J163idU8bm2
+Z52 V?P^XGVPecGbeQ;eC7UKWj0
+R7
+Z53 w1505216309
+Z54 8//Mac/Home/Desktop/module1/Mux.v
+Z55 F//Mac/Home/Desktop/module1/Mux.v
+L0 36
+R17
+r1
+31
+Z56 !s108 1505220498.373000
+Z57 !s107 //Mac/Home/Desktop/module1/Mux.v|
+Z58 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/Mux.v|
+R18
+Z59 n@mux_2
+Z60 !s100 Uh[aI;j6HTNP<;agJe<201
+!i10b 1
+!s85 0
+vMux_4_32
+Z61 I0FhT;SNM2i263PioDeLP52
+Z62 VShWAUVXA[?J8``N?89TUS3
+R7
+R53
+R54
+R55
+L0 2
+R17
+r1
+31
+R56
+R57
+R58
+R18
+Z63 n@mux_4_32
+Z64 !s100 c<ZUQ@abeQzoYOBk0b_A43
+!i10b 1
+!s85 0
+vMux_4_5
+Z65 IZe8<=;3_8YMd;5_]XA`VS2
+Z66 VOFa_gn5_b80W0@RIeUc:M1
+R7
+R53
+R54
+R55
+L0 19
+R17
+r1
+31
+R56
+R57
+R58
+R18
+Z67 n@mux_4_5
+Z68 !s100 ]Ji`Uf<e4>8KLBf7Z;?:z1
+!i10b 1
+!s85 0
+vnPC
+Z69 I`nG0eMdZ?8nh2F7R_L6U@2
+Z70 V6Lkn[G]gL5LelZ=h]W3j:3
+R7
+Z71 w1503396088
+Z72 8//Mac/Home/Desktop/module1/nPC.v
+Z73 F//Mac/Home/Desktop/module1/nPC.v
+L0 3
+R17
+r1
+31
+R18
+Z74 nn@p@c
+Z75 !s100 ZHUC_7[I_SO7IW>mcoVMg1
+Z76 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/nPC.v|
+Z77 !s108 1505220499.278000
+Z78 !s107 instruction_head.v|//Mac/Home/Desktop/module1/nPC.v|
+!i10b 1
+!s85 0
+vPC
+Z79 IS=VERlF3IoJc0h0[ThWjJ2
+Z80 Vzc[5h6[kd1n@NG:60c6Jz1
+R7
+Z81 w1389361080
+Z82 8//Mac/Home/Desktop/module1/PC.v
+Z83 F//Mac/Home/Desktop/module1/PC.v
+L0 1
+R17
+r1
+31
+R18
+n@p@c
+Z84 !s100 UeS=B9K7l0cTD??T845O^0
+Z85 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/PC.v|
+Z86 !s108 1505220500.230000
+Z87 !s107 //Mac/Home/Desktop/module1/PC.v|
+!i10b 1
+!s85 0
+vRegFile
+Z88 IEWYW<[Fn`_>TD7bQ^F=o`2
+Z89 VkZ:NbDzO<;9:E2Dm27kW>2
+R7
+Z90 w1389501320
+Z91 8//Mac/Home/Desktop/module1/regfile.v
+Z92 F//Mac/Home/Desktop/module1/regfile.v
+L0 6
+R17
+r1
+31
+R18
+Z93 n@reg@file
+Z94 !s100 ]UD57:Y6aR^T0ML:@gUJY1
+Z95 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/regfile.v|
+Z96 !s108 1505220504.192000
+Z97 !s107 //Mac/Home/Desktop/module1/regfile.v|
+!i10b 1
+!s85 0
+vsign_Ext
+Z98 Ia]d[k_I8aGzR7]g88kg@B0
+Z99 V?XmeN6Rb?i79aWeW>Vm?M1
+R7
+Z100 w1505216307
+Z101 8//Mac/Home/Desktop/module1/sign_Ext.v
+Z102 F//Mac/Home/Desktop/module1/sign_Ext.v
+L0 1
+R17
+r1
+31
+R18
+Z103 nsign_@ext
+Z104 !s100 m^C6lE0:f2P`cJb<1W3d<2
+Z105 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/sign_Ext.v|
+Z106 !s108 1505220502.476000
+Z107 !s107 //Mac/Home/Desktop/module1/sign_Ext.v|
+!i10b 1
+!s85 0
+vtestbench
+Z108 Ia=mkeCF8VPklPJ>1F=12C1
+Z109 VhGfW:390DM[oDMzegDH9`2
+R7
+Z110 w1503396663
+Z111 8//Mac/Home/Desktop/module1/pretestbench.v
+Z112 F//Mac/Home/Desktop/module1/pretestbench.v
+L0 2
+R17
+r1
+31
+R18
+Z113 !s100 GBj1]`9>Z<R9Q[<R[VlAT0
+Z114 !s108 1505220501.212000
+Z115 !s107 //Mac/Home/Desktop/module1/pretestbench.v|
+Z116 !s90 -reportprogress|300|-work|presim|//Mac/Home/Desktop/module1/pretestbench.v|
+!i10b 1
+!s85 0
