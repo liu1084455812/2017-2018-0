@@ -30,6 +30,7 @@ module controlUnit(	input [5:0] opcode,
                     Or = 6'b010000,
                     And = 6'b010001,
                     jal = 6'b111010,
+					//addiu= 6'b001001,
                     halt = 6'b111111;
 								 
 	 reg [2:0] state, next_state;
