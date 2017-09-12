@@ -39,6 +39,6 @@ module ctrl (clk,rst,op,funct,beqout,ALUctr,DMWrite,npc_sel,RegWrt,ExtOp,mux4_5s
    assign mux2sel  = (lw||sw||addiu)?'b1:'b0;//beq-ALUSRC//complete
    assign mux4_32sel = (lui)?2'b11:(add||addiu||OR)?2'b00:(lw)?2'b01:2'b10;//??????pc+4????JAL-MEMTOREG//complete
    
-   assign ALUctr = (add||addiu||lw||sw)?3'b001:(beq)?3'b010:(OR)?3'b011:3'b000;//ALUCLASS
+   assign ALUctr = (add||addiu||lw||sw)?3'b001:(beq)?3'b010:(OR)?3'b011:3'b000;//ALUCLASS//using sub to complete beq
    
 endmodule  

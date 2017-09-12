@@ -8,7 +8,7 @@ module ALu( A, B, Ctrl, C, Zero,beqout );
     input   [2:0]           Ctrl;               // function code
     output  [31:0]          C;                  // calculation result 
     output                  Zero;   
-    output beqout;            // 0 indicator
+    output 					beqout;            // 0 indicator
 
     /* internal registers and wires   */
     reg     [32:0]          tmp_arith ;         // result of arithmetic and logic operations
