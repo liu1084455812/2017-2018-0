@@ -97,18 +97,19 @@ module ctrl (PCWE,clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,RegWrt,
 	//IF确定PC写使能
 	if (state == sif) PCWE = 1;
     else PCWE = 0;
-   
+	
     //WB确定DM写使能
-	if(state == wb2) DMWrite = (sw)?'b1:'b0;
+	if(state == smem && sw==1) DMWrite = (sw)?'b1:'b0;
 	else DMWrite =0;
 	
 	//WB确定REG写使能
-	if(state == wb1 || state == wb2) RegWrt =(add||sub||addiu||lw||lui||OR||ori||XOR||AND||slt||addi||jal)?'b1:'b0;
+	if(state == wb1 || state == wb2 || jal==1) RegWrt =(add||sub||addiu||lw||lui||OR||ori||XOR||AND||slt||addi||jal)?'b1:'b0;
 	else RegWrt=0;
 	
-	//EXE确定运算使能
-	if(state == exe1 || state == exe2 || state ==exe3 )ALUctr = (add||addiu||addi||lw||sw)?5'b00001:(beq||sub)?5'b00010:(OR||ori)?5'b00011:(bgez||bgtz)?5'b00100:(AND)?5'b00101:(slt)?5'b00110:(XOR)?5'b00111:5'b00000;
-	else ALUctr=5'b00000;
+	// //EXE确定运算使能
+	// if(state == exe1 || state == exe2 || state ==exe3 || sw ==1)ALUctr = (add||addiu||addi||lw||sw)?5'b00001:(beq||sub)?5'b00010:(OR||ori)?5'b00011:(bgez||bgtz)?5'b00100:(AND)?5'b00101:(slt)?5'b00110:(XOR)?5'b00111:5'b00000;
+	// else ALUctr=5'b00000;
+	ALUctr = (add||addiu||addi||lw||sw)?5'b00001:(beq||sub)?5'b00010:(OR||ori)?5'b00011:(bgez||bgtz)?5'b00100:(AND)?5'b00101:(slt)?5'b00110:(XOR)?5'b00111:5'b00000;
 	
 	npc_sel<= (j||jal)?3'b001:((beq&&beqout)||(bgez&&bgezout)||(bgtz&&bgezout&&!beqout))?3'b011:(jr)?3'b100:3'b000; //singular  valuebeq?11//COMPLETE
 	ExtOp <=(lui)?2'b00:(lw||sw)?2'b10:(ori)?2'b01:2'b10;//EXT//OR DONT USE EXTOP//COMPLETE

@@ -1,0 +1,307 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u
+T_opt
+!s110 1505276867
+VWAQhVanI9^mEl6b_cHFl=0
+04 9 4 work testbench fast 0
+=1-80fa5b3ef1aa-59b8b3c3-a1-490
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt
+OL;O;10.4;61
+vALu
+Z1 !s110 1505276852
+!i10b 1
+!s100 T_J2DU]UhH49?HbcaZ<A?3
+IFn@0WOFVkdS[b0dN1=HUc3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1505230106
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/alu.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/alu.v
+L0 4
+Z3 OL;L;10.4;61
+r1
+!s85 0
+31
+!s108 1505276852.149000
+!s107 D:\github\2017-2018-0\PrinciplesOfComputerComposition\module2_u\module2_G\module2_G\instruction_head.v|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/alu.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/alu.v|
+!i113 0
+Z4 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@a@lu
+vctrl
+R1
+!i10b 1
+!s100 G7feOB=<ZTb1CbLoiU7ba2
+I>OYL`BT`b[i98F]34GclG3
+R2
+R0
+w1505276789
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/ctrl.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/ctrl.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1505276852.245000
+!s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/ctrl.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/ctrl.v|
+!i113 0
+R4
+vDataLate
+R1
+!i10b 1
+!s100 bo55I>Z;f?K`b`F7E^KkL2
+IXcj[[^Z>K<``0RBTYA@>a2
+R2
+R0
+w1505234352
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/DataLate.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/DataLate.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1505276852.335000
+!s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/DataLate.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/DataLate.v|
+!i113 0
+R4
+n@data@late
+vdm_4k
+R1
+!i10b 1
+!s100 5`:HVd39S:i8^9fXdlLGE2
+IG^9n4VW8zK@dFk>QCk^7n2
+R2
+R0
+w1389420560
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/dm.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/dm.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1505276852.422000
+!s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/dm.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/dm.v|
+!i113 0
+R4
+vim_4k
+R1
+!i10b 1
+!s100 fSSBHR>DaZ_k9^cRQZbNf0
+IRIC6YF=ZWSRmNOeX<jh6f3
+R2
+R0
+w1505236045
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/im.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/im.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1505276852.509000
+!s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/im.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/im.v|
+!i113 0
+R4
+vmips
+R1
+!i10b 1
+!s100 W2j7Cb]aQg`1mkQejH2N;3
+IhD154AId4FOe@06D;h4S33
+R2
+R0
+w1505236088
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/mips.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/mips.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1505276852.674000
+!s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/mips.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/mips.v|
+!i113 0
+R4
+vMux_2
+R1
+!i10b 1
+!s100 I9Rod`XIKn35;V;JfkW:D3
+IHQVRfh?ZWMz_MF2lLg`mR0
+R2
+R0
+Z5 w1505229474
+Z6 8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/Mux.v
+Z7 FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/Mux.v
+L0 37
+R3
+r1
+!s85 0
+31
+Z8 !s108 1505276852.764000
+Z9 !s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/Mux.v|
+Z10 !s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/Mux.v|
+!i113 0
+R4
+n@mux_2
+vMux_4_32
+R1
+!i10b 1
+!s100 cKliKj7ZA;iiPA;2]E;Gl0
+IU1?3khKGRV9=]H?9?j:CY3
+R2
+R0
+R5
+R6
+R7
+L0 2
+R3
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R4
+n@mux_4_32
+vMux_4_5
+R1
+!i10b 1
+!s100 k0lUWZ0Nn13VEnoB^5I9h3
+I@o1diFT6^1LNONQ^OYNn?1
+R2
+R0
+R5
+R6
+R7
+L0 20
+R3
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R4
+n@mux_4_5
+vnPC
+R1
+!i10b 1
+!s100 gMiA6TRX<ZM;a7Y=^W>b70
+I1bSWIaj<QTRGSK9Q7PH6S1
+R2
+R0
+w1505238962
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/nPC.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/nPC.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1505276852.860000
+!s107 D:\github\2017-2018-0\PrinciplesOfComputerComposition\module2_u\module2_G\module2_G\instruction_head.v|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/nPC.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/nPC.v|
+!i113 0
+R4
+nn@p@c
+vPC
+R1
+!i10b 1
+!s100 G@Om[:kEE764;3zZmGzaS1
+IbL=2Rld]VnRILk2UjXh:30
+R2
+R0
+w1505230663
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/PC.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/PC.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1505276852.948000
+!s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/PC.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/PC.v|
+!i113 0
+R4
+n@p@c
+vRegFile
+Z11 !s110 1505276853
+!i10b 1
+!s100 >KPNMJC2h`>e8g0N;5Z^d1
+Izh_^Rdc^NX7B[>Njl=1ck1
+R2
+R0
+w1505228282
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/regfile.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/regfile.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1505276853.113000
+!s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/regfile.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/regfile.v|
+!i113 0
+R4
+n@reg@file
+vsign_Ext
+R11
+!i10b 1
+!s100 b@G3nc=_;2AD?ZNNZTmRc2
+IWQ7nP5;`3`>^hgJ7KeC0N2
+R2
+R0
+w1505216308
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/sign_Ext.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/sign_Ext.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1505276853.201000
+!s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/sign_Ext.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/sign_Ext.v|
+!i113 0
+R4
+nsign_@ext
+vtestbench
+R11
+!i10b 1
+!s100 @H:5>08JOkP=2Imlf>P=Z2
+Il6jB_Jd9jfcgX[]aH>K2O0
+R2
+R0
+w1505275040
+8D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/testbench.v
+FD:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/testbench.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1505276853.288000
+!s107 D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/testbench.v|
+!s90 -reportprogress|300|-work|work|D:/github/2017-2018-0/PrinciplesOfComputerComposition/module2_u/module2_G/module2_G/testbench.v|
+!i113 0
+R4
