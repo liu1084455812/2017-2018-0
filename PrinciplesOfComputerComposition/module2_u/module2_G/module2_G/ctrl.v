@@ -82,9 +82,9 @@ module ctrl (PCWE,clk,rst,op,funct,beqout,bgezout,ALUctr,DMWrite,npc_sel,RegWrt,
 		exe1: next_state = wb1;
 		exe2: next_state = sif;
 		exe3: begin
-		    if (sw==1) next_state = wb2; // sw指令
-             else next_state = wb1 // lw指令
-		end
+				if (sw==1) next_state = wb2; // sw指令
+				else next_state = wb1;// lw指令
+			end
 		wb1: next_state = sif;
 		wb2: next_state = sif;
 		default: next_state = sif;
